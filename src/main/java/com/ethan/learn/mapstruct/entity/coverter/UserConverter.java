@@ -18,7 +18,6 @@ public interface UserConverter extends BasicConverter<UserDto, UserPo> {
     @Mapping(source = "userId", target = "id")
     @Mapping(source = "userName", target = "name")
     @Mapping(source = "sex", target = "sex", ignore = true)
-    @Mapping(source = "createTime", target = "" )
     @Override
     UserPo to(UserDto dto);
 }
