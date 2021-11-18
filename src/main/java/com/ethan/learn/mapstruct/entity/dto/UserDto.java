@@ -1,6 +1,7 @@
 package com.ethan.learn.mapstruct.entity.dto;
 
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
  * @date 2021/10/12 2:22 下午
  */
 @Data
+@Builder
 public class UserDto {
     private Long userId;
     private String userName;

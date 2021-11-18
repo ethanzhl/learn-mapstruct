@@ -15,10 +15,10 @@ public class TestController {
 
     @GetMapping("/test")
     public void test() {
-        final UserDto userDto = new UserDto();
-        userDto.setUserId(1L);
-        userDto.setUserName("zhangsan");
-        userDto.setSex("man");
+        final UserDto userDto = UserDto.builder()
+                .userId(1L)
+                .userName("zhangsan")
+                .sex("man").build();
 
         final UserPo po = UserConverter.INSTANCE.to(userDto);
         System.out.println(po);

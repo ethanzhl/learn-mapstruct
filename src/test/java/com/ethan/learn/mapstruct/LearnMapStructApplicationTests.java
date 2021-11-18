@@ -14,23 +14,23 @@ class LearnMapStructApplicationTests {
     @Test
     void contextLoads() {
 
-        final UserDto userDto = new UserDto();
-        userDto.setUserId(1L);
-        userDto.setUserName("zhangsan");
-        userDto.setSex("man");
-        userDto.setCreateTime(LocalDateTime.now());
-
+        final UserDto userDto = UserDto.builder()
+                .userId(1L)
+                .userName("zhangsan")
+                .sex("man")
+                .createTime(LocalDateTime.now()).build();
 
         final UserPo to = UserConverter.INSTANCE.to(userDto);
         System.out.println(to);
 
         System.out.println("===========================");
 
-        final UserPo userPo = new UserPo();
-        userPo.setId(1L);
-        userPo.setName("zhangsan");
-        userPo.setSex("man");
-        userPo.setCreateTime(LocalDateTime.now());
+        final UserPo userPo = UserPo.builder()
+                .id(1L)
+                .name("zhangsan")
+                .sex("man")
+                .createTime(LocalDateTime.now())
+                .build();
 
         final UserDto from = UserConverter.INSTANCE.from(userPo);
         System.out.println(from);
